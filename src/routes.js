@@ -1,13 +1,13 @@
 const { Router } = require('express');
 
-const ProductController = require('./app/controllers/ProductController');
+const PokemonController = require('./app/controllers/PokemonController');
 
 const router = Router();
 
-router.get('/produtos', ProductController.index);
-router.get('/produtos/:id', ProductController.show);
-router.delete('/produtos/:id', ProductController.delete);
-router.post('/produtos', ProductController.store);
-router.put('/produtos/:id', ProductController.update);
+router.get('/pokemon', PokemonController.index);
+router.post('/pokemon', PokemonController.guardar);
+router.get('/pokemon-info/:id', PokemonController.mostrar);
+router.delete('/pokemon-delete/:id', PokemonController.apagar);
+router.put('/pokemon-update/:id', PokemonController.atualizar);
 
 module.exports = router;
